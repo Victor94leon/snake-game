@@ -16,4 +16,11 @@ public class Snake
         this.altoLienzo = altoLienzo;
         this.anchoLienzo = anchoLienzo;
     }
+
+    /**
+     * Dibuja la serpiente en el lienzo
+     */
+    public void dibujar(Canvas lienzo) {
+        
+    }
 }

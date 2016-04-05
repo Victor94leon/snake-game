@@ -43,7 +43,7 @@ public class Segment
     }
 
     /**
-     * Devuelve la posición y del segmento
+     * Devuelve la posición X del segmento
      */
     public int getPosicionFinalX() {
         int posicionFinalX = posicionX;
