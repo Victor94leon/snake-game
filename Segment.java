@@ -36,4 +36,32 @@ public class Segment
     public int getDireccion() {
         return direccion;        
     }
+
+    /**
+     * Devuelve la posición y del segmento
+     */
+    public int getPosicionFinalX() {
+        int posicionFinalX = posicionX;
+        if(direccion==0) {
+            posicionFinalX -= LONGITUD_DEL_SEGMENTO;
+        }
+        else if(direccion==180){
+            posicionFinalX += LONGITUD_DEL_SEGMENTO;
+        }
+        return posicionFinalX;
+    }
+
+    /**
+     * Devuelve la posición y del segmento
+     */
+    public int getPosicionFinalY() {
+        int posicionFinalY = posicionY;
+        if(direccion==180) {
+            posicionFinalY -= LONGITUD_DEL_SEGMENTO;
+        }
+        else if(direccion==270) {
+            posicionFinalY += LONGITUD_DEL_SEGMENTO;
+        }
+        return posicionFinalY;
+    }
 }
