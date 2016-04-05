@@ -83,4 +83,11 @@ public class Segment
             lienzo.drawLine(posicionX,posicionY,posicionX,(posicionY - LONGITUD_DEL_SEGMENTO));
         }
     }
+    
+    /**
+     * Método para borrar un segmento
+     */
+    public void borrar(Canvas lienzo) {
+        lienzo.erase();
+    }
 }
