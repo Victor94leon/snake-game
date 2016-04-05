@@ -4,8 +4,8 @@ public class Segment
     private int posicionX;
     private int posicionY;
     private int direccion;
-    private Color color =  Color.BLACK;;
-    public int LONGITUD_DEL_SEGMENTO = 4;
+    private Color color;
+    public static final int LONGITUD_DEL_SEGMENTO = 10;
     private static final int DIFERENCIA_DE_GRADOS_ENTRE_DIRECCIONES = 90;
     private final static int DERECHA = 0;
     private final static int ARRIBA = 1;
@@ -14,11 +14,12 @@ public class Segment
     /**
      * Constructor for objects of class Segment
      */
-    public Segment(int posicionX, int posicionY, int direccion)
+    public Segment(int posicionX, int posicionY, int direccion, Color color)
     {
         this.posicionX = posicionX;
         this.posicionY = posicionY;
         this.direccion = direccion;
+        this.color = color;
     }
 
     /**
@@ -73,26 +74,21 @@ public class Segment
     /**
      * Método para dibujar un segmento en el lienzo
      */
-    public void dibujar(Canvas lienzo) {
-        lienzo.setForegroundColor(color);
-        if (direccion==0) {
-            lienzo.drawLine(posicionX,posicionY,(posicionX - LONGITUD_DEL_SEGMENTO),posicionY);
-        }
-        else if(direccion==90) {
-            lienzo.drawLine(posicionX,posicionY,posicionX,(posicionY - LONGITUD_DEL_SEGMENTO));
-        }
-        else if(direccion==180) {
-            lienzo.drawLine(posicionX,posicionY,(posicionX + LONGITUD_DEL_SEGMENTO),posicionY);
-        }
-        else {
-            lienzo.drawLine(posicionX,posicionY,posicionX,(posicionY - LONGITUD_DEL_SEGMENTO));
-        }
+    public void dibujar(Canvas lienzo)     {
+      lienzo.setForegroundColor(color);
+      lienzo.drawLine(posicionX,posicionY,getPosicionFinalX(),getPosicionFinalY());
     }
 
     /**
-     * Método para borrar un segmento
+     * Comprueba si un segmento colisiona con otro
      */
-    public void borrar(Canvas lienzo) {
-        lienzo.erase();
+    public boolean colisiona(Segment segmento) {
+        return (posicionX == segmento.getPosicionFinalX() && posicionY == segmento.getPosicionFinalY());
+    }
+
+    public void borrar(Canvas lienzo)
+    {
+        lienzo.setForegroundColor(lienzo.getBackgroundColor());
+        lienzo.drawLine(posicionX,posicionY,getPosicionFinalX(),getPosicionFinalY());
     }
 }
