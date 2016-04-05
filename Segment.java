@@ -15,4 +15,25 @@ public class Segment
         this.posicionY = posicionY;
         this.direccion = direccion;
     }
+
+    /**
+     * Devuelve la posicion x del segmento
+     */
+    public int getPosicionInicialX() {
+        return posicionX;
+    }
+
+    /**
+     * Devuelve la posición y del segmento
+     */
+    public int getPosicionInicialY() {
+        return posicionY;
+    }
+
+    /**
+     * Devuelve la dirección del segmento
+     */
+    public int getDireccion() {
+        return direccion;        
+    }
 }
