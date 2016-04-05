@@ -64,4 +64,23 @@ public class Segment
         }
         return posicionFinalY;
     }
+
+    /**
+     * Método para dibujar un segmento en el lienzo
+     */
+    public void dibujar(Canvas lienzo) {
+        lienzo.setForegroundColor(color);
+        if (direccion==0) {
+            lienzo.drawLine(posicionX,posicionY,(posicionX - LONGITUD_DEL_SEGMENTO),posicionY);
+        }
+        else if(direccion==90) {
+            lienzo.drawLine(posicionX,posicionY,posicionX,(posicionY - LONGITUD_DEL_SEGMENTO));
+        }
+        else if(direccion==180) {
+            lienzo.drawLine(posicionX,posicionY,(posicionX + LONGITUD_DEL_SEGMENTO),posicionY);
+        }
+        else {
+            lienzo.drawLine(posicionX,posicionY,posicionX,(posicionY - LONGITUD_DEL_SEGMENTO));
+        }
+    }
 }
