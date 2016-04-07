@@ -1,33 +1,42 @@
-
-/**
- * Write a description of class SnakeGame here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class SnakeGame
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private Canvas lienzo;
+    private Snake snake;
+    private static final int ALTO_LIENZO = 500;
+    private static final int ANCHO_LIENZO = 450;
     /**
      * Constructor for objects of class SnakeGame
      */
     public SnakeGame()
     {
-        // initialise instance variables
-        x = 0;
+        lienzo = new Canvas("Snake Game",ALTO_LIENZO,ANCHO_LIENZO);        
     }
-
+    
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Crea y dibuja la serpiente en el lienzo
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void drawSnake() {
+        snake = new Snake(ALTO_LIENZO,ANCHO_LIENZO);
+        lienzo.erase();
+        snake.dibujar(lienzo);
+    }
+    
+    /**
+     * Hace que laserpiente se mueva de manera aleatoria
+     */
+    public void animatedSnake() {
+        while(snake.mover()) {
+            lienzo.wait(50);
+            lienzo.erase();  
+            snake.dibujar(lienzo);
+        }
+        lienzo.drawString("GAME OVER",205,200);
+    }
+    
+    /**
+     * Pinta una serie de galletas de forma aleatoria por la pantalla
+     */
+    public void startGame() {
+        
     }
 }

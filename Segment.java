@@ -5,7 +5,7 @@ public class Segment
     private int posicionY;
     private int direccion;
     private Color color;
-    public static final int LONGITUD_DEL_SEGMENTO = 10;
+    public static final int LONGITUD_SEGMENTO = 50;
     private static final int DIFERENCIA_DE_GRADOS_ENTRE_DIRECCIONES = 90;
     private final static int DERECHA = 0;
     private final static int ARRIBA = 1;
@@ -49,10 +49,10 @@ public class Segment
     public int getPosicionFinalX() {
         int posicionFinalX = posicionX;
         if(direccion==DIFERENCIA_DE_GRADOS_ENTRE_DIRECCIONES*DERECHA) {
-            posicionFinalX -= LONGITUD_DEL_SEGMENTO;
+            posicionFinalX -= LONGITUD_SEGMENTO;
         }
         else if(direccion==DIFERENCIA_DE_GRADOS_ENTRE_DIRECCIONES*IZQUIERDA){
-            posicionFinalX += LONGITUD_DEL_SEGMENTO;
+            posicionFinalX += LONGITUD_SEGMENTO;
         }
         return posicionFinalX;
     }
@@ -63,10 +63,10 @@ public class Segment
     public int getPosicionFinalY() {
         int posicionFinalY = posicionY;
         if(direccion==DIFERENCIA_DE_GRADOS_ENTRE_DIRECCIONES*ARRIBA) {
-            posicionFinalY -= LONGITUD_DEL_SEGMENTO;
+            posicionFinalY -= LONGITUD_SEGMENTO;
         }
         else if(direccion==DIFERENCIA_DE_GRADOS_ENTRE_DIRECCIONES*ABAJO) {
-            posicionFinalY += LONGITUD_DEL_SEGMENTO;
+            posicionFinalY += LONGITUD_SEGMENTO;
         }
         return posicionFinalY;
     }
