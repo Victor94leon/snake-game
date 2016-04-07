@@ -25,9 +25,9 @@ public class SnakeGame
      * Hace que laserpiente se mueva de manera aleatoria
      */
     public void animatedSnake() {
-        while(snake.mover()) {
-            lienzo.wait(50);
-            lienzo.erase();  
+        while(snake.mover()) {  
+            snake.borrar(lienzo);
+            lienzo.wait(50);           
             snake.dibujar(lienzo);
         }
         lienzo.drawString("GAME OVER",205,200);

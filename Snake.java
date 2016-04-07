@@ -45,7 +45,7 @@ public class Snake
     {
         for (Segment segmento : segmentos) {
             segmento.borrar(lienzo);
-        }             
+        } 
     }
 
     /*

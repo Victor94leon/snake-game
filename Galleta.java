@@ -7,15 +7,15 @@
  */
 public class Galleta
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private int posicionX;
+    private int posicionY;
+    
 
     /**
      * Constructor for objects of class Galleta
      */
     public Galleta()
     {
-        // initialise instance variables
-        x = 0;
+      
     }
 }
